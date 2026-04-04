@@ -278,7 +278,7 @@ const Search = () => {
                               (section.title === "Cuisine" && selectedCuisine === item.name) ||
                               (section.title === "Diet" && selectedDiet === item.name) ||
                               (section.title === "Health" && selectedHealth === item.name)
-                            ) && { backgroundColor: "#05B681" }   // ✅ green selected
+                            ) && { backgroundColor: "#05B681" }   
                           ]}
 
                           onPress={() => {
@@ -454,13 +454,13 @@ const styles = StyleSheet.create({
   },
 
   filterItem: {
-    paddingHorizontal: 10,   // left-right space
-    paddingVertical: 6,      // height control
-    margin: 5,               // gap between buttons
+    paddingHorizontal: 10,   
+    paddingVertical: 6,     
+    margin: 5,             
     borderWidth: 1,
     borderColor: '#ddd',
-    borderRadius: 20,        // 👈 round pill shape
-    backgroundColor: '#f2f2f2', // light grey bg
+    borderRadius: 20,        
+    backgroundColor: '#f2f2f2', 
     alignItems: 'center',
     justifyContent: 'center',
 

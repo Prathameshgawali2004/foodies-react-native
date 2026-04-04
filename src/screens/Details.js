@@ -1,117 +1,117 @@
-import React ,{useState } from "react";
-import {Text,View,StyleSheet,Image,TouchableOpacity,  FlatList,}  from 'react-native';
-import { useNavigation, useRoute} from "@react-navigation/native";
+import React, { useState } from "react";
+import { Text, View, StyleSheet, Image, TouchableOpacity, FlatList, } from 'react-native';
+import { useNavigation, useRoute } from "@react-navigation/native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
 
 const imageMap = {
-    '1': require('../../Assets/breakfast1.jpg'),
-    '2': require('../../Assets/breakfast2.jpg'),
-    '3': require('../../Assets/breakfast3.jpg'),
-    '4': require('../../Assets/breakfast4.jpg'),
-    '5': require('../../Assets/lunch1.jpg'),
-    '6': require('../../Assets/lunch2.jpg'),
-    '7': require('../../Assets/lunch3.jpg'),
-    '8': require('../../Assets/lunch4.jpg'),
-    '9': require('../../Assets/burger1.jpg'),
-    '10': require('../../Assets/burger2.jpg'),
-    '11': require('../../Assets/burger3.jpg'),
-    '12': require('../../Assets/burger4.jpg'),
+  '1': require('../../Assets/breakfast1.jpg'),
+  '2': require('../../Assets/breakfast2.jpg'),
+  '3': require('../../Assets/breakfast3.jpg'),
+  '4': require('../../Assets/breakfast4.jpg'),
+  '5': require('../../Assets/lunch1.jpg'),
+  '6': require('../../Assets/lunch2.jpg'),
+  '7': require('../../Assets/lunch3.jpg'),
+  '8': require('../../Assets/lunch4.jpg'),
+  '9': require('../../Assets/burger1.jpg'),
+  '10': require('../../Assets/burger2.jpg'),
+  '11': require('../../Assets/burger3.jpg'),
+  '12': require('../../Assets/burger4.jpg'),
 };
 
 
 const Details = () => {
-   
-    const navigation = useNavigation();
-      const route = useRoute();
 
-   const item = route.params?.recipe;
-const image = route.params?.image;
-      const [selectedTab, setSelectedTab] = useState(0);
+  const navigation = useNavigation();
+  const route = useRoute();
+
+  const item = route.params?.recipe;
+  const image = route.params?.image;
+  const [selectedTab, setSelectedTab] = useState(0);
 
   const tabs = ["Health", "Cuisine", "Ingredients", "Diet", "Cautions"];
 
-   // ✅ Data for all tabs
+  // ✅ Data for all tabs
   const healthData = [
     "Rich in nutrients",
     "Good for digestion",
     "Low in fat",
     "Boosts immunity",
-  "Supports heart health"
+    "Supports heart health"
   ];
 
-  const cuisineData = ["Indian", 
+  const cuisineData = ["Indian",
     "South Indian",
     "Homestyle cooking",
-  "Traditional recipe",
-  "Popular street food style",
+    "Traditional recipe",
+    "Popular street food style",
   ];
 
   const dietData = [
     "Weight loss friendly",
     "Balanced diet",
     "Low calorie option",
-  "High fiber content",
-  "Good for daily meals",
+    "High fiber content",
+    "Good for daily meals",
   ];
 
   const cautionData = [
     "Avoid overeating",
     "Not suitable for everyone",
     "May contain allergens",
-  "Check ingredients before use",
-  "Consume in moderation",
+    "Check ingredients before use",
+    "Consume in moderation",
 
   ];
 
   const ingredientsData = [
-  "1 cup oats",
-  "1/2 cup milk",
-  "1 banana",
-  "Almonds",
-  "Cashews",
-];
-    return(
-        
-         
-         
-  <View style={styles.root}>
- 
-      
+    "1 cup oats",
+    "1/2 cup milk",
+    "1 banana",
+    "Almonds",
+    "Cashews",
+  ];
+  return (
 
-            <Animatable.Image
-  source={image || imageMap[String(item?.id)]}
-  style={styles.banner}
-  animation={'slideInUp'}
-/>
-        
-            <TouchableOpacity style={styles.backBtn}
-                 onPress={() => navigation.goBack()}
-            >
-                 <Ionicons name="chevron-back" size={30} color="black" /> 
-            </TouchableOpacity>
 
-       <Text style={styles.title}>{item?.name}</Text>
 
-            <Text style={styles.metaText}>Calories:{""}
-            <Text style={{ color: "orange" }}>{item?.calories || "1012.6226914"}</Text>
-          </Text>
- 
-          <Text style={styles.metaText}>Total Weight:{""}
-         <Text style={{ color: "red" }}>{item?.weight || "300 g"}
-          </Text>
+    <View style={styles.root}>
+
+
+
+      <Animatable.Image
+        source={image || imageMap[String(item?.id)]}
+        style={styles.banner}
+        animation={'slideInUp'}
+      />
+
+      <TouchableOpacity style={styles.backBtn}
+        onPress={() => navigation.goBack()}
+      >
+        <Ionicons name="chevron-back" size={30} color="black" />
+      </TouchableOpacity>
+
+      <Text style={styles.title}>{item?.name}</Text>
+
+      <Text style={styles.metaText}>Calories:{""}
+        <Text style={{ color: "orange" }}>{item?.calories || "1012.6226914"}</Text>
+      </Text>
+
+      <Text style={styles.metaText}>Total Weight:{""}
+        <Text style={{ color: "red" }}>{item?.weight || "300 g"}
         </Text>
+      </Text>
 
-        <Text style={styles.metaText}>Meal Type:{""}
-       <Text style={{ color: "green" }}>{item?.mealType || "Breakfast/Dinner"}
+      <Text style={styles.metaText}>Meal Type:{""}
+        <Text style={{ color: "green" }}>{item?.mealType || "Breakfast/Dinner"}
         </Text>
-        </Text> 
-          
-       {   /* Tabs */}
+      </Text>
+
+      {   /* Tabs */}
       <FlatList
         horizontal
         data={tabs}
-        style={{ maxHeight: 50 }}   
+        style={{ maxHeight: 50 }}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.tabsContainer}
         keyExtractor={(item, index) => index.toString()}
@@ -130,23 +130,23 @@ const image = route.params?.image;
             <Text
               style={{
                 color: selectedTab === index ? "white" : "black",
-                fontWeight: "600", fontSize: 14,   
+                fontWeight: "600", fontSize: 14,
               }}
             >
               {item}
-              </Text>
-               </TouchableOpacity>
-)} 
+            </Text>
+          </TouchableOpacity>
+        )}
       />
-              {selectedTab === 0 && (
+      {selectedTab === 0 && (
         <View style={styles.labelsContainer}>
-           {healthData.map((item, index) => (
-          <View key={index} style={styles.labelBox}>
-              <Text style={styles.labelText}>{item}</Text>    
+          {healthData.map((item, index) => (
+            <View key={index} style={styles.labelBox}>
+              <Text style={styles.labelText}>{item}</Text>
+            </View>
+          ))}
         </View>
-     ))}
-      </View>
-              )}
+      )}
 
       {selectedTab === 1 && (
         <View style={styles.labelsContainer}>
@@ -163,15 +163,15 @@ const image = route.params?.image;
 
       {/* Ingredients Section */}
       {selectedTab === 2 && (
-         <View style={styles.labelsContainer}>
-  {ingredientsData.map((item, index) => (
-    <View key={index} style={styles.labelBox}>
-      <Text style={styles.labelText}>{item}</Text>
-    </View>
-            ))}
-          </View>
-       
- )}
+        <View style={styles.labelsContainer}>
+          {ingredientsData.map((item, index) => (
+            <View key={index} style={styles.labelBox}>
+              <Text style={styles.labelText}>{item}</Text>
+            </View>
+          ))}
+        </View>
+
+      )}
 
       {selectedTab === 3 && (
         <View style={styles.labelsContainer}>
@@ -183,7 +183,7 @@ const image = route.params?.image;
         </View>
       )}
 
-           {selectedTab === 4 && (
+      {selectedTab === 4 && (
         <View style={styles.labelsContainer}>
           {cautionData.map((item, index) => (
             <View key={index} style={styles.labelBox}>
@@ -194,112 +194,113 @@ const image = route.params?.image;
       )}
     </View>
 
- 
-    
-    )}
-const styles=StyleSheet.create({
-              root:{
-             flex:1
-              },
 
-              banner:{
-                width: '100%',
-                 height:250,
-                resizeMode:'cover',
 
-            },
+  )
+}
+const styles = StyleSheet.create({
+  root: {
+    flex: 1
+  },
 
-            backBtn:{
-                    width:50,
-                    height:50,
-                    borderRadius:25,
-                    backgroundColor:'white',
-                    position:'absolute',
-                    top:20,
-                    left:5,
-                    alignItems:'center',
-                    justifyContent:'center'
+  banner: {
+    width: '100%',
+    height: 250,
+    resizeMode: 'cover',
 
-            },
+  },
 
-            title:{
-                    fontSize: 30,
-                    fontWeight:'600',
-                    width:'90%',
-                    alignSelf:'center'
-            },
+  backBtn: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: 'white',
+    position: 'absolute',
+    top: 20,
+    left: 5,
+    alignItems: 'center',
+    justifyContent: 'center'
 
-            source:{
-                    marginLeft:25,
-                    marginTop:10
-            },
+  },
 
-                typeItem:{
-                         paddingHorizontal: 12,
-                        paddingVertical: 6,
-                        marginHorizontal: 4,
-                        borderRadius: 15,
-                        borderColor: '#ccc',
-                        alignSelf: 'flex-start'  
+  title: {
+    fontSize: 30,
+    fontWeight: '600',
+    width: '90%',
+    alignSelf: 'center'
+  },
 
-                },
+  source: {
+    marginLeft: 25,
+    marginTop: 10
+  },
 
-                labelsContainer:{
-                width:'90%',
-                 alignSelf:'center',
-                 marginTop:20,
-                },
-              
+  typeItem: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    marginHorizontal: 4,
+    borderRadius: 15,
+    borderColor: '#ccc',
+    alignSelf: 'flex-start'
 
-labelBox: {
-  width: "100%",   // 👈 2 column layout
-  borderWidth: 0.5,
-  borderColor: "#9e9e9e",
-  borderRadius: 10,
-  padding: 12,
-  marginBottom: 12,
+  },
 
-  backgroundColor: "#fff",
-},
+  labelsContainer: {
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 20,
+  },
 
-labelText: {
-  fontSize: 14,
-  color: "#333",
- 
-},
 
-                   heading:{
-                  fontSize:20,
-                  fontWeight:'600',
-                  width:'90%',           
-                  alignSelf:'center',    
-                  marginTop:15
- 
-},
-tab: {
-  paddingHorizontal: 15,
-  height: 35,             
-  justifyContent: "center",
-  alignItems: "center",
-  
-  marginRight: 10,
-  borderRadius: 50,
-  borderColor: "#05B681",
-},
+  labelBox: {
+    width: "100%",   
+    borderWidth: 0.5,
+    borderColor: "#9e9e9e",
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 12,
 
-tabsContainer: {
-  marginTop: 15,
-  paddingLeft: 20,
-},
+    backgroundColor: "#fff",
+  },
+
+  labelText: {
+    fontSize: 14,
+    color: "#333",
+
+  },
+
+  heading: {
+    fontSize: 20,
+    fontWeight: '600',
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 15
+
+  },
+  tab: {
+    paddingHorizontal: 15,
+    height: 35,
+    justifyContent: "center",
+    alignItems: "center",
+
+    marginRight: 10,
+    borderRadius: 50,
+    borderColor: "#05B681",
+  },
+
+  tabsContainer: {
+    marginTop: 15,
+    paddingLeft: 20,
+  },
   metaText: {
-  width: "90%",
-  alignSelf: "center",
-  fontSize: 15,
-  marginTop: 5,
-  color: "#333",
-},
+    width: "90%",
+    alignSelf: "center",
+    fontSize: 15,
+    marginTop: 5,
+    color: "#333",
+  },
 
 
-                  
+
 })
 export default Details;

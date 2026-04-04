@@ -10,7 +10,7 @@ export const recipesData = [
     id: '1',
     name: 'Idli',
     category: 'Breakfast',
-    ingredients: ['Rice', 'Dal','Salt', 'Water', 'Fenugreek Seeds'],
+    ingredients: ['Rice', 'Dal', 'Salt', 'Water', 'Fenugreek Seeds'],
     images: ['1']
   },
   {
@@ -31,15 +31,15 @@ export const recipesData = [
     id: '4',
     name: 'Poha',
     category: 'Breakfast',
-    ingredients: ['Poha', 'Onion', 'Peanuts','Mustard Seeds', 'Curry Leaves'],
+    ingredients: ['Poha', 'Onion', 'Peanuts', 'Mustard Seeds', 'Curry Leaves'],
     images: ['4']
   },
 
-{
-  id: '5',
+  {
+    id: '5',
     name: 'Biryani',
     category: 'Lunch',
-    ingredients: ['Rice', 'Spices', 'Chicken','Onion', 'Yogurt'],
+    ingredients: ['Rice', 'Spices', 'Chicken', 'Onion', 'Yogurt'],
     images: ['5']
   },
   {
@@ -60,22 +60,22 @@ export const recipesData = [
     id: '8',
     name: 'Panner roll',
     category: 'Lunch',
-    ingredients:  ['Roti', 'Paneer', 'Onion', 'Capsicum', 'Sauce'],
+    ingredients: ['Roti', 'Paneer', 'Onion', 'Capsicum', 'Sauce'],
     images: ['8']
   },
 
-{
-  id: '9',
+  {
+    id: '9',
     name: 'Burger',
     category: 'Burger',
-    ingredients:['Bun', 'Patty', 'Lettuce', 'Tomato', 'Sauce'],
+    ingredients: ['Bun', 'Patty', 'Lettuce', 'Tomato', 'Sauce'],
     images: ['9']
   },
   {
     id: '10',
     name: 'VegBurger',
     category: 'Lunch',
-    ingredients:  ['Bun', 'Veg Patty', 'Cheese', 'Onion', 'Sauce'],
+    ingredients: ['Bun', 'Veg Patty', 'Cheese', 'Onion', 'Sauce'],
     images: ['10']
   },
   {
@@ -89,7 +89,7 @@ export const recipesData = [
     id: '12',
     name: 'ChilliBurger',
     category: 'Soup',
-    ingredients:  ['Bun', 'Spicy Patty', 'Chilli Sauce', 'Onion', 'Cheese'],
+    ingredients: ['Bun', 'Spicy Patty', 'Chilli Sauce', 'Onion', 'Cheese'],
     images: ['12']
   },
 ];
@@ -97,23 +97,23 @@ export const recipesData = [
 
 
 const searchrecipesData = [
-  { id: '1', category: 'Idli' ,desc: 'Quick breakfast' },
-  { id: '2', category: 'Chai' ,desc:'Healthy morning meal'},
-  { id: '3',  category: 'Dosa', desc: 'Tasty dish'},
-  { id: '4', category: 'Poha' ,desc: 'Protein rich food'},
-  { id: '5',  category: 'Biryani',desc: 'Full meal' },
+  { id: '1', category: 'Idli', desc: 'Quick breakfast' },
+  { id: '2', category: 'Chai', desc: 'Healthy morning meal' },
+  { id: '3', category: 'Dosa', desc: 'Tasty dish' },
+  { id: '4', category: 'Poha', desc: 'Protein rich food' },
+  { id: '5', category: 'Biryani', desc: 'Full meal' },
   { id: '6', category: 'Pasta', desc: 'Spicy lunch' },
-  { id: '7',  category: 'Pizza', desc: 'Testy lunch'},
-  { id: '8', category: 'PannerRoll',desc: 'Nice lunch'},
-  { id: '9', category: 'Hamburger', desc:'Frid burger'},
-  {id: '10',  category: 'Grilledburger', desc: 'Testy burger'},
-  { id: '11',  category: 'Crispyburger',desc: 'Chilly burger' },
-  { id: '12',  category: 'burger',desc: 'Frid burger' },
+  { id: '7', category: 'Pizza', desc: 'Testy lunch' },
+  { id: '8', category: 'PannerRoll', desc: 'Nice lunch' },
+  { id: '9', category: 'Hamburger', desc: 'Frid burger' },
+  { id: '10', category: 'Grilledburger', desc: 'Testy burger' },
+  { id: '11', category: 'Crispyburger', desc: 'Chilly burger' },
+  { id: '12', category: 'burger', desc: 'Frid burger' },
 ];
 
 
 const Dish_Filters = [
-   {
+  {
     id: 1,
     title: "Dish Type",
     data: [
@@ -121,7 +121,7 @@ const Dish_Filters = [
       { id: 2, name: "Lunch" },
       { id: 3, name: "Dinner" },
       { id: 4, name: "Burger" },
-      { id: 5, name: "Snacks" },      
+      { id: 5, name: "Snacks" },
       { id: 6, name: "Dessert" },
 
 
@@ -136,7 +136,7 @@ const Dish_Filters = [
       { id: 2, name: "Chinese" },
       { id: 3, name: "Italian" },
       { id: 4, name: "Mexican" },
-      { id: 5, name: "Thai" },        
+      { id: 5, name: "Thai" },
       { id: 6, name: "American" },
     ]
   },
@@ -149,7 +149,7 @@ const Dish_Filters = [
       { id: 2, name: "Non-Veg" },
       { id: 3, name: "Vegan" },
       { id: 4, name: "Keto" },
-       { id: 5, name: "Paleo" },      
+      { id: 5, name: "Paleo" },
       { id: 6, name: "Low Carb" },
     ]
   },
@@ -161,8 +161,8 @@ const Dish_Filters = [
       { id: 2, name: "Low Fat" },
       { id: 3, name: "High Protein" },
       { id: 4, name: "Gluten Free" },
-       { id: 5, name: "Low Sodium" },  
-      { id: 6, name: "Organic" },     
+      { id: 5, name: "Low Sodium" },
+      { id: 6, name: "Organic" },
     ]
   }
 
