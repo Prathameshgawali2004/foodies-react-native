@@ -39,7 +39,7 @@ A modern and user-friendly food delivery mobile application built using React Na
 ### Modal
 ![Modal](./Modal.jpg)
 
-## 🚀 Run Locally
+## ● Run Locally
 
 ```bash
 npm install
