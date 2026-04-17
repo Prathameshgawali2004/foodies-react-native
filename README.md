@@ -24,7 +24,7 @@ A modern and user-friendly food delivery mobile application built using React Na
 ![Recipe](./Recipe.jpg)
 
 ###  Search Screen
-![Search](./Search.jpg)
+![search](./search.jpg)
 
 ###  Details Screen
 ![Details](./Details.jpg)
